@@ -34,9 +34,7 @@ var json = {
         "peakView": 6,
         "distance": 10.4,
         
-        This is to test the git push
-        what happened
-        
+// cleaned up test
         
         }
     }
