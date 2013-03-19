@@ -1,41 +1,24 @@
+//  Peterson_David_assignment3.js
+// David Peterson 2013/3/19
+// SID 1303 assignment 3
 
 
+// Climb the Highest Peaks in the Adirondacks
 
+var handleData = function (json) {
+    
+};
+handleData(json);
 
-var json = {
-    "46Peaks": {
-        "Marcy": {
+console.log(json);
+
+/*    "46Peaks": [
+        {
+        "name" : "Marcy",
         "peakHeight": 5344,
         "peakDifficulty": 9,
         "peakView": 10,
-        "distance": 14.8,
-        }
-        "Algonquin": {
-        "peakHeight": 5114,
-        "peakDifficulty": 7,
-        "peakView": 10,
-        "distance": 9.6,
-        }
-        "Haystack": {
-        "peakHeight": 4960,
-        "peakDifficulty": 10,
-        "peakView": 9,
-        "distance": 17.8,
-        }
-        "Skylight": {
-        "peakHeight": 4926,
-        "peakDifficulty": 10,
-        "peakView": 9,
-        "distance": 17.9,
-        }
-        "Whiteface": {
-        "peakHeight": 4867,
-        "peakDifficulty": 8,
-        "peakView": 6,
-        "distance": 10.4,
-        
-// cleaned up test
-        
-        }
-    }
-}
+        "peakDistance": 14.8,
+        "peakTrail": true 
+        }, */
+console.log("finished");
