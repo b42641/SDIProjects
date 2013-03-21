@@ -3,10 +3,10 @@
 // David Peterson
 // SID 1303 assignment 3
 
-var json = {
-    "46Peaks": [
+var json2 = {
+    "highPeaks": [
         {
-        "name" : "Marcy",
+        "peakName" : "Marcy",
         "peakHeight": 5344,
         "peakDifficulty": 9,
         "peakView": 10,
@@ -14,7 +14,7 @@ var json = {
         "peakTrail": true 
         },
         {
-        "name": "Algonquin",
+        "peakName": "Algonquin",
         "peakHeight": 5114,
         "peakDifficulty": 7,
         "peakView": 9,
@@ -22,7 +22,7 @@ var json = {
         "peakTrail": true
         }, 
         {
-        "name" : "Haystack",
+        "peakName" : "Haystack",
         "peakHeight": 4960,
         "peakDifficulty": 10, 
         "peakView": 9,
@@ -30,7 +30,7 @@ var json = {
         "peakTrail": true
         },
         {
-        "name" : "Skylight",
+        "peakName" : "Skylight",
         "peakHeight": 4926,
         "peakDifficulty": 10,
         "peakView": 9,
@@ -38,7 +38,7 @@ var json = {
         "peakTrail": false
         },
         {
-        "name" : "Whiteface",
+        "peakName" : "Whiteface",
         "peakHeight": 4867,
         "peakDifficulty": 8,
         "peakView": 6,
@@ -46,4 +46,46 @@ var json = {
         "peakTrail": true   
         }
     ]
+} 
+
+var highPeaks2 = {
+//    "highPeaks2": {
+        "Marcy": {
+        "peakHeight": 5344,
+        "peakDifficulty": 9,
+        "peakView": 10,
+        "peakDistance": 14.8,
+        "peakTrail": true 
+        },
+        "Algonquin": {
+        "peakHeight": 5114,
+        "peakDifficulty": 7,
+        "peakView": 9,
+        "peakDistance": 9.6,
+        "peakTrail": true
+        }, 
+        "Haystack": {
+        "peakHeight": 4960,
+        "peakDifficulty": 10, 
+        "peakView": 9,
+        "peakDistance": 17.8,
+        "peakTrail": true
+        },
+        "Skylight": {
+        "peakHeight": 4926,
+        "peakDifficulty": 10,
+        "peakView": 9,
+        "peakDistance": 17.9,
+        "peakTrail": false
+        },
+        "Whiteface": {
+        "peakHeight": 4867,
+        "peakDifficulty": 8,
+        "peakView": 6,
+        "peakDistance": 10.4,
+        "peakTrail": true   
+        }
+
 }
+
+
