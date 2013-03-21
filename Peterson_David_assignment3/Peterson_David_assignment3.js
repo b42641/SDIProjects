@@ -1,8 +1,33 @@
 //  Peterson_David_assignment3.js
 // David Peterson 2013/3/19
 // SID 1303 assignment 3
+//
 
+
+
+
+// Key index for Summit Choice
 var peakChosen // index number of peak chosen to climb
+
+// Boolean return of trail or not
+var trail2Summit = function(peakChosen) {
+return json2.highPeaks2[peakChosen].peakTrail;
+};
+
+//
+var trailMessage = function() {
+    var trailRespond = " ";
+    if (trail2Summit (peakChosen)) {
+        trailRespond =  "The trail up the summit is well marked. Enjoy your hike."
+    } else {
+        trailRespond = "Since the summit is not marked by a trail, bring a map and gps."
+    }
+    return trailRespond
+};
+
+
+// Original set up until I was able get json working.
+// left in program because of array and function (and it was getting too late to change.)
 var peak = {
     peakName: "Marcy",
     peakHeight: 5344,
@@ -17,6 +42,7 @@ var peak = {
             var potentialTrails = peak.peakTrailhead[i];
             console.log(potentialTrails);
         } //for
+            return peak.peakTrailLength;
     }, //chooseTrailhead
     
     desiredTrailhead: function(trailChoice) {
@@ -26,11 +52,9 @@ var peak = {
     } // desiredTrailhead   
 }; //var
 
-// Boolean return of trail or not
-var trail2Summit = function(peakChosen) {
-return json2.highPeaks2[peakChosen].peakTrail;
-};
-
+// Various variables 
+var hikeLength = [6, 5, 4];
+var jerkyTaken = [50, 30, 20];
 
 
 
@@ -50,14 +74,9 @@ var eatHalfTheJerky = function(jerkyRemaining) {
     jerkyRemaining -= jerkyToEat;
     return jerkyRemaining;
 };
-// Various 
-var hikeLength = [6, 5, 4];
-var jerkyTaken = [50, 30, 20];
-var timeHiking = [120, 90, 60];
-var timeBreak = [15, 10, 5]
 
 //THE TRIP
-// Keep time of the hour
+// Keep time of the hike and break
 var hikingTrip = function(hoursOfHiking) {
     var timeCount = 60; //hike for 60 minutes
     var breakCount = 10; //break for 10 minutes
@@ -74,7 +93,7 @@ var hikingTrip = function(hoursOfHiking) {
     
         while (breakCount > 0) {
             breakCount -= 5;
-            console.log("Relax, there are " + breakCount + " minutes of break time left.");
+            console.log("There are " + breakCount + " minutes of break time left.");
         }//while breakCount
     
         console.log("Time to get moving.")
@@ -86,9 +105,23 @@ var hikingTrip = function(hoursOfHiking) {
     console.log("We are there!");
 } // hikingTrip
 
+// Checkpoints for Trip - mutator, setter, getter, etc.
+var checkPoints = ["Trailhead", "Cross Creek", "Ascend", "Summit", "Descend", "Cross Creek", "Trailhead"]
+var displayCheckPoints = function(displayCheckPoints) {
+console.log("Evaluate Checkpoints: " + displayCheckPoints);
+}
+var removeCheckPoints = function(howMany) {
+    checkPoints.splice(1,howMany);
+};
+var addCheckPoints = function(finalCheckPoint) {
+    checkPoints.push(finalCheckPoint);
+};
 
 
+//-------------------------------
 // Begin Adventure
+//--------------------------------
+console.log("The Adventure Begins Here");
 
 // Choose Peak
 console.log("Which peak do you want to climb?");
@@ -101,34 +134,38 @@ console.log("The first peak is chosen.");
 var userChoice = 1; // represent user choosing first peak
 peakChosen = userChoice - 1; // set the index number
 
-//Does the peak have a trail? If it is a trailless peak, we need map and gps //Boolean
-if (trail2Summit (peakChosen)) {
-    console.log("The trail up the summit is well marked. Enjoy your hike.");
-} else {
-    console.log("Since the summit is not marked by a trail, bring a map and gps.");
+// List trailhead options by displaying each potential trailhead // array return
+var trailLengths = peak.chooseTrailhead ();
+for (var i=0; i<trailLengths.length; i++) {
+    console.log(peak.peakTrailhead[i] + " is " + trailLengths[i] + " miles in length.");
 }
-
-// List trailhead options by displaying each potential trailhead
-peak.chooseTrailhead ();
 
 // Return the desired trail (third)
 peak.desiredTrailhead (3);
+
+//Does the peak have a trail? If it is a trailless peak, we need map and gps //Boolean
+console.log(trailMessage());
 
 // make the trip
 console.log("Begin Trip");
 hikingTrip (hikeLength[2]);
 
+// What did you think? Return an Object
+console.log("What do you want to do next? Here is a look at the top five peaks."); 
+for (var key in highPeaks2) {
+    var peakName = highPeaks2[key];
+    console.log(key);
+    console.log(peakName);
+}
 
-
-
-
-
-//for (var key in highPeaks2) {
-//    var peakName = highPeaks2[key];
-//    console.log(key);
-//    console.log(peakName);
-//    console.log(highPeaks2.peakHeight[key]);
-//}
+// Work with Checkpoint List.
+displayCheckPoints(checkPoints); //array argument
+//Remove first Checkpoints - Mutator of Checkpoints
+removeCheckPoints(4);
+displayCheckPoints (checkPoints); //array argument
+//add checkpoint
+addCheckPoints("Car");
+displayCheckPoints (checkPoints); //array argument
 
 
 
