@@ -4,7 +4,7 @@
 // SID 1303 assignment 3
 
 var json2 = {
-    "highPeaks": [
+    "highPeaks2": [
         {
         "peakName" : "Marcy",
         "peakHeight": 5344,
@@ -46,14 +46,13 @@ var json2 = {
         "peakTrail": true   
         }
     ]
-} 
+}; 
 
 var highPeaks2 = {
-//    "highPeaks2": {
         "Marcy": {
         "peakHeight": 5344,
-        "peakDifficulty": 9,
-        "peakView": 10,
+        "peakDifficulty": 9.1,
+        "peakView": 10.1,
         "peakDistance": 14.8,
         "peakTrail": true 
         },
@@ -85,7 +84,6 @@ var highPeaks2 = {
         "peakDistance": 10.4,
         "peakTrail": true   
         }
-
 }
 
 
