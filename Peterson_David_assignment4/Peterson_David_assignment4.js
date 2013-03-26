@@ -2,64 +2,35 @@
 // SDI Project 4 1303
 // David Peterson March 25, 2013
 //
- 
- create / add second part of calculation
- 
-var fuzzyMatch = function(rANum, rBNum, rCNum) {
-var highLow = "High";
-var distance = "Inside";
-if (rANum < rBNum) {
-    highLow = "Low";
-    var highCalc = rBNum;
-    
-} else {
-    console.log(2);
-    highLow = "High";
-    var highCalc = rANum;
-    
-}
 
-    var returnArray = [highLow, distance];
-    return returnArray;
+//sort an array by the value of the key
+
+var sortByKey = function(recArray, recKey) {
+  console.log(recArray);
+  for (var i=0; i<recArray.length; i++) {
+    if (recArray[i] > recArray[i+1]) {
+        console.log(recArray[i] + " is greater than " + recArray[i+1]);
+    } else {
+        console.log(recArray[i] + " is less than " + recArray[i+1]);
+
+    }
+  }
+  
+    
 };
 
-var aNum = 50;
-var bNum = 100;
-var cNum = 40;
-console.log(fuzzyMatch(aNum, bNum, cNum));
-
-
+var sendArray = [{a:2},{b:3},{a:1},{a:4},{a:3}]
+var sendKey = "a";
+console.log(sortByKey(sendArray, sendKey));
 
 /*
-Fuzzy-match a number: is the number above or below a number within a certain
-percent?
-This function confuses students the most, so please ask if you have questions.
-You will send three numbers as parameters for the function. You will then
-compare the first number to the second number to see if the first number is
-greater than or less than the second number, and then you will use the third
-number to see if the first number is within that percentage of the second number.
-So, if you were to send (5, 10, 50), the function would first determine if 5 is
-greater than or less than 10. It would then determine if 5 is within 50% of 10. The
-function should then return the results.
-Activity: Project 4 - 2
-
-
-Find the number of hours or days difference between two dates.
-This function requires you to send three parameters. The first two will be dates
-that you want to compare, and the third will be a string to determine if the
-function returns hours or days. The function will then perform the math
-necessary to find the difference between the two dates and return the choice of
-hours or days.
-
-
-Given a string version of a number, such as “42”, return the value as an actual Number
-data type, such as 42.
-As you have learned, there is a difference between a number as a string data
-type and a number as a Number data type. For this task, you will simply need to
-send a string into the function and return it as a Number. If you want to get
-creative, you also can add a conditional to determine if the string sent into the
-function is a number before you do the conversion.
-
+Given an array of objects and the name of a key, return the array sorted by the value of
+that key in each of the objects: “a” + [{a:2},{a:3},{a:1}] --> [{a:1},{a:2},{a:3}].
+This function also requires you to send two argument parameters. The first one
+is an array of objects and the second one is a key. The function will then sort the
+array of objects by the key you send. In this case, you might send an array of
+objects [{a:2},{b:3}.{a:1},{a:4}] and the key “a” which will then be sorted by the
+function using the key “a” and returned as [{a:1},{a:2},{a:3},{a:4},{b:3}].*/
 
 
 
@@ -93,43 +64,7 @@ STRING FUNCTIONS
 String Functions
 
 
-/*Title-case a string (split into words, then uppercase the first letter of each word).
-This problem involves sending a string into the function, changing the first letter
-of each word to uppercase while making sure the rest of the word is lowercase,
-and then returning the string from the function so it can be output.*/
 
-//Convert text into title
-/*var makeTitle = function(receivedText) {
-    var returnText = "";
-    for (var i=0; i<receivedText.length; i++)    
-        if(receivedText[i] == " ") {
-            returnText.pop.(receivedText[i])
-        }
-        returnText.pop(receivedText[i].toUpperCase());
-        receivedText[2] = "P";
-        console.log("2nd - " + receivedText);
-
-//        if(var==0) (receivedText[0].toUpperCase)
-    
-//    if (receivedText.charAt(i)=" ") {receivedText.charAt(i}
-};
-
-var sendText = "this text will become upper-case.";
-console.log(makeTitle(sendText));*/
- 
-
-
-
-/*
-
-Given a string that is a list of things separated by a given string, as well as another
-string separator, return a string with the first separator changed to the second: “a,b,c” +
-“,” + “/” --> “a/b/c”.
-For this problem, you will need to send three arguments into your function. The
-first is the string with items separated by a separator (such as a comma). The
-second is the separator that is being replaced. The third parameter is the
-separator you are going to use in place of the original. Thus, if you send the
-parameters (“a,b,c”, “,”, “/”), the function should return the string as “a/b/c”.
 
 
 
@@ -139,33 +74,11 @@ parameters (“a,b,c”, “,”, “/”), the function should return the string as “a/b/c”
 Array Functions
 
 
-Find the smallest value in an array than is greater than a given number.
-You will need to send two items into the function. The first is an array of numbers
-and the second will be a number you’ll compare to numbers within the array. You
-will then return the number in the array that is the next highest number to the one
-you’re using in the comparison. So, if you send the array [1,4,7,9,10,14,15] and
-the number 12 into the function, it should return 14 as the next highest number.
-
-
-
-Find the total value of just the numbers in an array, even if some of the items are not
-numbers.
-This one can be tricky if your array includes a string that is a number. You will
-send an array into the function and have it add together the numbers in the array.
-For example, if you send the array [1, “pickles”, 3, “onions”, 5, “10”, 6, “SDI”], the
-function should return 15. Therefore, it should be able to recognize “10” as a
-string and ignore it from the total.
 
 
 
 
-Given an array of objects and the name of a key, return the array sorted by the value of
-that key in each of the objects: “a” + [{a:2},{a:3},{a:1}] --> [{a:1},{a:2},{a:3}].
-This function also requires you to send two argument parameters. The first one
-is an array of objects and the second one is a key. The function will then sort the
-array of objects by the key you send. In this case, you might send an array of
-objects [{a:2},{b:3}.{a:1},{a:4}] and the key “a” which will then be sorted by the
-function using the key “a” and returned as [{a:1},{a:2},{a:3},{a:4},{b:3}].
+
 
 */
 
@@ -173,7 +86,7 @@ function using the key “a” and returned as [{a:1},{a:2},{a:3},{a:4},{b:3}].
 
 
 
-
+/*
 //------------------------
 //STRINGS
 //------------------------
@@ -202,13 +115,12 @@ var validPhoneNumber = function(receivedPhoneNumber) {
     return true
 };
 
-/*console.log()
 var phoneNumber = "132-313-4435";
 console.log(validPhoneNumber(phoneNumber));
-*/
 
 
-/*
+
+
 //check for valid email address - receives email address - returns boolean
 var validEmailAddress = function(receivedEmailAddress) {
     // "." must be 4 the char from the end
@@ -232,10 +144,10 @@ var validEmailAddress = function(receivedEmailAddress) {
 
 var email = "dbpetedfulls@ail.com";
 console.log(validEmailAddress(email));
-*/
 
 
-/*
+
+
 //check valid URL format - receives URL address - returns boolean
 var validURL = function(receivedURL) {
 //check for http:// or https://
@@ -246,14 +158,55 @@ return false;
 
 var URL = "hdttps://dbpetedfulls@ail.com";
 console.log(validURL(URL));
-*/
+
+
+//Convert text into title
+function makeTitle(recTitle) {
+var sendStr = recTitle.charAt(0).toUpperCase();
+var setUpper = false;
+for(var i=1; i<recTitle.length; i++) {
+    if (setUpper) {
+        sendStr += recTitle.charAt(i).toUpperCase();
+        setUpper = false;
+        i++;
+    };
+    if (recTitle.charAt(i) == " ") {setUpper = true};
+    sendStr += recTitle.charAt(i);
+
+}
+return sendStr;
+}
+console.log( makeTitle("john smith attorney at law") );
+
+
+//Convert (A) changing old separator (B) to new separator (C)
+function convertSeparator(recString, oldSeparator, newSeparator) {
+    console.log(recString + " - " + oldSeparator + " - " + newSeparator);
+var sendString = recString.charAt(0);
+for(var i=1; i<recString.length; i++) {
+    if (recString.charAt(i) == oldSeparator) {
+        sendString += newSeparator;
+        
+    } else {
+    sendString += recString.charAt(i);
+    };
+}
+return sendString;
+}
+var string2Convert = ("john,smith,attorney,at,law")
+var oldSeparator = ",";
+var newSeparator = "/"; 
+console.log(convertSeparator(string2Convert, oldSeparator, newSeparator));
+
+
+
 
 
 //------------------------
 //NUMBER
 //------------------------
 
-/*
+
 // conver number to 2 decimal places
 var convert2Money = function(receivedNumber, receivedDecimal) {
 return(receivedNumber.toFixed(receivedDecimal));
@@ -262,5 +215,117 @@ return(receivedNumber.toFixed(receivedDecimal));
 var num = 5.596789;
 var dec = 3
 console.log(convert2Money(num, dec));
+
+
+
+// fuzzyMath funtion
+// Receive three numeric inputs (a, b, c)
+// Calculate if a is lower or high than b - result "high" or "low"
+// Calculate if the number is low number is withint "c"% of high number
+//                                  result is "inside" or "outside"
+ 
+var fuzzyMatch = function(rANum, rBNum, rCNum) {
+var highLow = "High";
+var distance = "Inside";
+var compareDistance = rBNum * (rCNum / 100)
+// HIGH or LOW
+if (rANum < rBNum) {
+    highLow = "Low";
+    var highCalc = rBNum;
+} else {
+    console.log(2);
+    highLow = "High";
+    var highCalc = rANum;
+}
+//INSIDE or OUTSIDE
+if (rANum < compareDistance) {
+    distance = "Inside";
+} else {
+    console.log(2);
+    distance = "Outside";
+}
+    var returnArray = [highLow, distance];
+    return returnArray;
+};
+
+var aNum = 50;
+var bNum = 100;
+var cNum = 60;
+console.log(fuzzyMatch(aNum, bNum, cNum));
+
+
+// Calculate the difference betweeen two dates, return hours or days based on format selection
+var dateDifference = function(date1, date2, format) {
+    var hours = 1000 * 60 * 60; // hours dividend
+    var days = 1000 * 60 * 60 * 24; // days dividend
+    console.log (hours + " - " + days);
+    // Convert to milliseconds & Calc difference
+    var dateMil1 = date1.getTime();
+    var dateMil2 = date2.getTime();
+    var difference = Math.abs(dateMil1 - dateMil2);
+    if (format == "hours") {
+        return (difference/hours);
+    } else {
+        return (difference/days);
+    }
+};
+
+var a = new Date(2013, 3, 26, 12, 0, 0, 0);
+var b = new Date(2013, 3, 25, 0, 0, 0, 0);   
+console.log(dateDifference(a, b, "hours"));
+
+
+
+
+// convert numeric string to numeric data type
+
+var convertNum = function(numString) {
+    var numNumber = 0
+    numNumber = numString * 1;
+    return numNumber
+}
+console.log(convertNum("42"));
+if (convertNum("42") === 42) {
+    console.log("Great!");
+}
+
+
+//find smallest value in an array that is greater than given number
+var findSmallest = function(search, limit) {
+    var lowest = 0
+    for (var i=0; i < search.length; i++) {
+        if (search[i] > limit) {
+            console.log(lowest);
+            if (lowest == 0) {
+                lowest = search[i]; }
+            if (search[i] < lowest) {
+                lowest = search[i];
+            }
+        }
+    }
+};
+
+
+var smallSearch = [1,4,7,9,10,14,13,15];
+var smallLimit = 12
+console.log(findSmallest(smallSearch, smallLimit))
+
+
+
+// total value for array numerics (exclude character numbers)
+var totalArray = function(receiveArray) {
+    var returnTotal = 0;
+    for (var i = 0; i < receiveArray.length; i++) {
+        if (typeof receiveArray[i] == "number") {
+            returnTotal += receiveArray[i];
+        };
+    };
+    return returnTotal
+}; 
+
+var sendArray = [1, "pickles", 3, "onions", 5, "10", 6, "SDI"];
+console.log("Answer is: " + (totalArray(sendArray)));
 */
+
+
 
