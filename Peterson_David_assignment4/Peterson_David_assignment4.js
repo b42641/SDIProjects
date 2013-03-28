@@ -2,96 +2,13 @@
 // SDI Project 4 1303
 // David Peterson March 25, 2013
 //
-
-//sort an array by the value of the key
-
-var sortByKey = function(recArray, recKey) {
-  console.log(recArray);
-  for (var i=0; i<recArray.length; i++) {
-    if (recArray[i] > recArray[i+1]) {
-        console.log(recArray[i] + " is greater than " + recArray[i+1]);
-    } else {
-        console.log(recArray[i] + " is less than " + recArray[i+1]);
-
-    }
-  }
-  
-    
-};
-
-var sendArray = [{a:2},{b:3},{a:1},{a:4},{a:3}]
-var sendKey = "a";
-console.log(sortByKey(sendArray, sendKey));
-
-/*
-Given an array of objects and the name of a key, return the array sorted by the value of
-that key in each of the objects: “a” + [{a:2},{a:3},{a:1}] --> [{a:1},{a:2},{a:3}].
-This function also requires you to send two argument parameters. The first one
-is an array of objects and the second one is a key. The function will then sort the
-array of objects by the key you send. In this case, you might send an array of
-objects [{a:2},{b:3}.{a:1},{a:4}] and the key “a” which will then be sorted by the
-function using the key “a” and returned as [{a:1},{a:2},{a:3},{a:4},{b:3}].*/
+// FlowChart - 17 points from project 3
+// project 2 - New Technical/Arguments: Zero (0/8pts) No arguments in your function declarations.
 
 
-
-
-
-
-
-//String
-/*var myString = "SomeText";
-var myString.length = 9
-myString.substring(0, 4) = Some
-myString.charAt(3) = e
-myString.indexOf("e") = 3
-myString.lastIndexOf(e) = 6
-*/
-
-//Math
-/*
-
-Extra credit/Make-up Option:
-Make-up points are available on this project. The eligibility guidelines are as follows:
-• You must complete all twelve functions.
-• You must submit your project on time.
-• You must use comments within your code to document the sections that illustrate the
-concept for which you lost points. You also need to indicate which project it was.
-Below are more robust descriptions of what is needed or expected for each function.
-Read them over carefully. If you still have questions, please feel free to email me.
-
-
-STRING FUNCTIONS
-String Functions
-
-
-
-
-
-
-
-
-
-Array Functions
-
-
-
-
-
-
-
-
-*/
-
-
-
-
-
-/*
 //------------------------
 //STRINGS
 //------------------------
-
-
 
 
 //check for valid phone number -receives phone number - returns boolean
@@ -161,6 +78,7 @@ console.log(validURL(URL));
 
 
 //Convert text into title
+//Extra Credit - Project 3 - mutator and return values
 function makeTitle(recTitle) {
 var sendStr = recTitle.charAt(0).toUpperCase();
 var setUpper = false;
@@ -179,7 +97,10 @@ return sendStr;
 console.log( makeTitle("john smith attorney at law") );
 
 
+
 //Convert (A) changing old separator (B) to new separator (C)
+// extra credit- project 2 New Technical/Arguments: Zero (0/8pts
+
 function convertSeparator(recString, oldSeparator, newSeparator) {
     console.log(recString + " - " + oldSeparator + " - " + newSeparator);
 var sendString = recString.charAt(0);
@@ -325,7 +246,46 @@ var totalArray = function(receiveArray) {
 
 var sendArray = [1, "pickles", 3, "onions", 5, "10", 6, "SDI"];
 console.log("Answer is: " + (totalArray(sendArray)));
-*/
+
+
+
+
+//sort an array by the value of the key
+// I worked on this for all the time I had this week.
+// Very busy with work.
+// This was a mess. I redid it and now do not have time to finish
+var sortByKey = function(recKey, recArray) {
+    for (var i=0; i<recArray.length; i++) {
+        if(recArray.key == "recKey") {
+            
+        }
+//        console.log(i);
+        console.log("yo");
+//        console.log(recArray(i));
+    };
+};
+
+var sendKey = "a";
+var sendArray ={
+        "a":{
+        "sendNum": 2
+        },
+        "b":{
+        "sendNum": 3
+        },
+        "a":{
+        "sendNum": 1
+        },
+        "a":{
+        "sendNum": 4
+        },
+        "a":{
+        "sendNum": 3
+        }
+};
+console.log(sortByKey(sendKey, sendArray));
+sortByKey(sendKey, sendArray);
+
 
 
 
